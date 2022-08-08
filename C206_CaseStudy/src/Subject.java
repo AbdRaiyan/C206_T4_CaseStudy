@@ -5,6 +5,7 @@ public class Subject{
 		if addSubject == True:
 			System.out.println("Subject added");
 		else: 
+			
 			System.out.println("Subject not addedd");
 	}
     public deleteSubject{
