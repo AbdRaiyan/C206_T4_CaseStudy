@@ -1,6 +1,8 @@
 public class User_Account { 
 	 public static void main(String[] args) 
 	   {
+		 String username = "";
+		 String password = "";
 
 	     public UserLogin(String username, String password) {
 	    	 this.username = username;
