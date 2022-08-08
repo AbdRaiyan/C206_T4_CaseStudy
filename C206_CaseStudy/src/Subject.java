@@ -1,4 +1,5 @@
 public class Subject{
+	
 	public addSubject{
 		if addSubject == True:
 			System.out.println("Subject added");
