@@ -14,7 +14,7 @@ public class User_Account {
 	     System.out.println("Password: ");
 
 	       UserLogin login = new UserLogin(username, password);
-	       if(login.checkPassword())
+	       if(login)
 	           System.out.println("Login successful");
 	       else
 	           System.out.println("The username or password you entered is incorrect.");
