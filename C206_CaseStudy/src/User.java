@@ -1,15 +1,15 @@
 public class User { 
-	private String name;// done by Gerlad
-	private String role;// done by Gerlad
-	public User(String name, String role) {// done by Gerlad
+	private String name;// done by Gerald
+	private String role;// done by Gerald
+	public User(String name, String role) {// done by Gerald
 		super();
 		this.name = name;
 		this.role = role;
 	}
-	public String getName() {// done by Gerlad
+	public String getName() {// done by Gerald
 		return name;
 	}
-	public String getRole() {// done by Gerlad
+	public String getRole() {// done by Gerald
 		return role;
 	}
 
