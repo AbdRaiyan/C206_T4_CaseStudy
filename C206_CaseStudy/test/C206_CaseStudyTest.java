@@ -73,28 +73,8 @@ public class C206_CaseStudyTest {
 		assertEquals("Check that quotation arraylist size is 0", 0, careerList.size());
 	}
 	
-	@Test
-	public void  testViewCareerInfo() {
-		//test if the expected output string same as the list of quotation retrieved from the SourceCentre
-		//test if the list of career retrieved from the SourceCentre is empty
-		C206_CaseStudy.addCareerInfo(careerList, career1);
-		C206_CaseStudy.addCareerInfo(careerList, career2);
-		C206_CaseStudy.addCareerInfo(careerList, career3);
-		assertNotNull(careerList);
-				
-		String allCareer= C206_CaseStudy.retrieveAllQuotation(careerList);
-		String testOutput = "";	
-					
-		//test if the expected output string same as the list of quotation retrieved from the SourceCentre
-		allCareer= C206_CaseStudy.retrieveAllQuotation(careerList);
 
-
-		testOutput = String.format("%-15d %-15s\n", 1,"School Teacher");
-		testOutput += String.format("%-15d %-15s\n",2,"Accountant");
-		testOutput += String.format("%-15d %-15s\n", 3,"IT Programmer");
-						
-		assertEquals("Check that ViewAllQuotationList", testOutput, allCareer);
-	}
+	
 	@After
 	public void tearDown() throws Exception {
 	//career
