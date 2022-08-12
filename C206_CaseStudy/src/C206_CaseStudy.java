@@ -50,7 +50,7 @@ public class C206_CaseStudy {
 						caChoice=Helper.readInt ("Enter Choice > ");
 							if (caChoice ==1){
 								career c =inputPackage();
-								C206_CaseStudy.addCarrerInfo(careerList,c);
+								C206_CaseStudy.addCareerInfo(careerList,c);
 								System.out.println("Career has been successfully added");
 							}
 							else if (caChoice == 2){
