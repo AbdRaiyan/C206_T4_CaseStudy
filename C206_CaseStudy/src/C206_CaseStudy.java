@@ -105,8 +105,8 @@ private static void viewClusterInfo(ArrayList<Academic_cluster> cluster) { //---
 			System.out.println(output);
 }
 
-public static void addClusterInfo(ArrayList<Academic_cluster> cluster, Academic_cluster c){
-cluster.add(c);
+public static void addClusterInfo(ArrayList<career> careerList, Academic_cluster c){
+careerList.add(c);
 System.out.println(c +"has added successfully.");
 }
 public static Academic_cluster input() {
