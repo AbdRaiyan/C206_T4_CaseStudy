@@ -2,7 +2,6 @@ import java.util.ArrayList;
 
 public class C206_CaseStudy {
 	public static void main(String[] args) {
-		//-----------Array List for User (done by Gerald) -------------
 		ArrayList<User> accountList = new ArrayList <User>();
 		accountList.add(new User("May","Student"));
 		accountList.add(new User("Mary","Teacher"));
@@ -15,9 +14,11 @@ public class C206_CaseStudy {
 		careerList.add(new career(2,"Accountant"));
 		careerList.add(new career (3,"IT Programmer"));
 		
+		//----------Array List for Academic Cluster (Done by Allen)-------
+		ArrayList<Academic_cluster> cluster = new ArrayList <Academic_cluster>();
 		
 		int option =-1;
-		while (option !=2){
+		while (option !=3){
 			mainMenu();
 			option = Helper.readInt("Enter choice > ");
 			if (option == 1){
@@ -50,7 +51,7 @@ public class C206_CaseStudy {
 						caChoice=Helper.readInt ("Enter Choice > ");
 							if (caChoice ==1){
 								career c =inputPackage();
-								C206_CaseStudy.addCarrerInfo(careerList,c);
+								C206_CaseStudy.addCareerInfo(careerList,c);
 								System.out.println("Career has been successfully added");
 							}
 							else if (caChoice == 2){
@@ -72,19 +73,94 @@ public class C206_CaseStudy {
 					}
 				}
 				else if (option == 2){
+					acMenu();
+					int choice=Helper.readInt("Enter your choice >");
+					if(choice==1) {
+						viewClusterInfo(cluster);
+					}else if(choice==2) {
+						Academic_cluster c =input();
+						C206_CaseStudy.addClusterInfo(careerList,c);
+					}
+					else if(choice==3) {
+						
+					}
+					
+				}else if(option==3){
 					System.out.println("Thank you for using ....");
 				}
-				else {
-					System.out.println("Invalid option!");
+					
 				}
+				
 		}
-	}
+	/**
+* 
+*/
+private static void viewClusterInfo(ArrayList<Academic_cluster> cluster) { //---created By Allen
+// TODO Auto-generated method stub
+
+	String output = String.format("%-15s %-15s  \n", "Code","Name" );
+			for(int i = 0; i < cluster.size(); i++){	
+				output += String.format("%-15d %-15s\n", cluster.get(i).getId(),cluster.get(i).getName());
+			}
+			System.out.println(output);
+}
+
+public static void addClusterInfo(ArrayList<Academic_cluster> cluster, Academic_cluster c){
+cluster.add(c);
+System.out.println(c +"has added successfully.");
+}
+public static Academic_cluster input() {
+	Academic_cluster c = null;
+int addClusterId = Helper.readInt("Enter Cluster ID > ");
+String addCareeName = Helper.readString("Enter Cluster Name > ");
+
+c = new Academic_cluster(addClusterId, addCareeName);
+return c;
+		
+}
+
+public static void deleteClusterInfo(ArrayList<Academic_cluster> Academic_cluster){
+viewClusterInfo(Academic_cluster);
+int deleteClusterCode = Helper.readInt("Enter Cluster ID > ");
+boolean checker = false;
+	try {
+		for (int i = 0; i <= Academic_cluster.size()+1; i++) {
+			if (Academic_cluster.get(i).getId() == deleteClusterCode){
+				Academic_cluster.remove(i);
+				checker = true;
+				break;
+				}
+			}
+		}
+		catch (Exception e) {
+			checker = false;
+        }
+		if (checker == true) {
+			System.out.println(deleteClusterCode  +"has been deleted!");
+		}
+		else{
+			System.out.println("Cluster Code not found!");
+		}
+
+}
+
+
+	
+//---------------Academic Cluster menu(done by Allen)-----------------
+private static void acMenu() {
+Helper.line(30, "-");
+System.out.println("WELCOME TO Career Planning Application ");
+System.out.println("1. View Academic Cluster");
+System.out.println("2. Add academic cluster");
+System.out.println("3. Delete an academic cluster");
+Helper.line(30, "-");
+}
 //------------------------MAIN MENU (done by Gerald)----------------		
 		private static void mainMenu() {
 			Helper.line(30, "-");
 			System.out.println("WELCOME TO Career Planning Application (CPA)");
 			System.out.println("1. Enter Login credentials");
-			System.out.println("2. Quit");
+			System.out.println("2. Academic Cluster");
 			Helper.line(30, "-");
 		}
 //--------------STUDENT & TEACHER MENU (done by Gerald)----------------
@@ -152,6 +228,4 @@ public class C206_CaseStudy {
 						output += String.format("%-15d %-15s\n", careerList.get(i).getId(),careerList.get(i).getName());
 					}
 					System.out.println(output);
-		}
-		
-	}
+		}	}
